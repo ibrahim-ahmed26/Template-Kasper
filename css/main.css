@@ -1,0 +1,309 @@
+/* Start Globlal Varaibles */
+/* Start Gloabl variables */
+/* Added to Github */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  text-transform: capitalize;
+}
+:root {
+  --main-color: #19c8fa;
+  --secondary-color: rgb(15 116 143 / 70%);
+  --section-background: #f6f6f6;
+}
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* small */
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* Start Header */
+.header {
+  background-image: url("../project-image/landing.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  min-height: 100vh;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /60%);
+  z-index: -1;
+}
+.header .container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+.header .container .head .list {
+  color: white;
+  list-style: none;
+  position: relative;
+}
+.header .container .head .list li {
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+  transition: 0.5s;
+}
+@media (max-width: 991px) {
+  .header .container .head .list li {
+    width: 100%;
+  }
+}
+.header .container .head .list li a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+  padding-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .header .container .head .list {
+    background-color: rgb(0 0 0 / 50%);
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header .container .head .list li a {
+    padding-bottom: 10px;
+    display: block;
+  }
+}
+.header .container .head .list li a:hover {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+.header .container .head .list li a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+.header .container .head .bar {
+  display: none;
+  color: white;
+}
+.header .container .head .bar i {
+  padding: 15px;
+  font-size: 25px;
+}
+@media (max-width: 991px) {
+  .header .container .head .bar {
+    display: block;
+    cursor: pointer;
+  }
+}
+/* End Header */
+/* Start Home Section */
+.header .home {
+  margin-top: 60px;
+  padding-top: 50px;
+  width: 100%;
+  position: relative;
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+.header .home .text {
+  color: white;
+  padding: 40px;
+}
+.header .home .text h3 {
+  font-size: 25px;
+  width: 350px;
+  line-height: 1.6;
+}
+.header .home .text p {
+  line-height: 1.8;
+  width: 50%;
+}
+@media (max-width: 991px) {
+  .header .home .text h3 {
+    width: 100%;
+  }
+  .header .home .text p {
+    width: 100%;
+  }
+}
+/* Start Arrows */
+div.arrow-first,
+div.arrow-second {
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.5s;
+}
+div.arrow-first:hover,
+div.arrow-second:hover {
+    color: var(--main-color);
+}
+div.arrow-first i {
+  position: absolute;
+}
+div.arrow-first {
+    left: 97%;
+}
+div.arrow-second {
+  right: 99%;
+}
+div.arrow-second i {
+    position: absolute;
+}
+@media(max-width:991px) {
+    div.arrow-first,
+    div.arrow-second {
+      display: none;
+    }
+}
+/* End Arrows */
+/* Start Bullets */
+.bullets {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 60px;
+}
+
+.bullets span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bullets span.active {
+    background-color: var(--main-color);
+    width: 15px;
+    border-radius: 10px;
+}
+/* End Bullets */
+/* End Home Section */
+/* Start Services */
+.services {
+    padding-top: 60px;
+}
+.header-text {
+    text-align: center;
+    position: relative;
+}
+.header-text h2 {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    transition: 0.5s;
+}
+.header-text h2:hover {
+    color: var(--main-color);
+    padding-bottom: 0px;
+}
+.header-text h2::before {
+    content: "";
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: black;
+    width: 100px;
+    height: 3%;
+}
+.header-text h2::after {
+    content: "";
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.header-text P {
+    width: 450px;
+    color: #777;
+    margin: 0 auto;
+    line-height: 1.6;
+    transition: 0.5s;
+    max-width: 100%;
+}
+.header-text P:hover {
+    color: var(--main-color);
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    gap: 20px;
+}
+@media(max-width:991px) {
+    .services .container {
+        grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+        text-align: center;
+    }
+}
+.services .container .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+@media(max-width:991px) {
+    .services .container .box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.services .container .box .icon {
+    margin-top: 20px;
+    padding-right:20px ;
+    max-width: 100%;
+}
+.services .container .box .text h4 {
+    color: var(--main-color);
+    margin-bottom: 40px;
+}
+.services .container .box .text p {
+    color: #777;
+}
+/* End Services */
