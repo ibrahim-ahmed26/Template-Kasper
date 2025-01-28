@@ -335,6 +335,7 @@ div.arrow-second i {
 .design .container .text {
   color: white;
   padding-top: 60px;
+  padding-left: 60px;
 }
 .design .container .logo {
   position: relative;
@@ -346,6 +347,7 @@ div.arrow-second i {
   .design .container .text {
     text-align: center;
     padding: 40px;
+    background-color: var(--secondary-color);
   }
 }
 .design .container .logo img {
@@ -364,3 +366,89 @@ div.arrow-second i {
   color: var(--main-color);
 }
 /* End Design */
+/* Start portfolio */
+.portfolio {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.portfolio .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+.portfolio .text p {
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-right: 5px;
+}
+.portfolio .text p:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+.portfolio .text p.active {
+  color: white;
+  background-color: var(--main-color);
+}
+.portfolio .big-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+}
+@media(max-width:991px) {
+  .portfolio .big-box {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+.portfolio .big-box .box {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.portfolio .big-box .box img {
+  width: 100%;
+  transition: 0.5s;
+}
+.portfolio .big-box .box:hover img {
+  transform: scale(1.1) rotate(4deg);
+}
+.portfolio .big-box .box p {
+  position: absolute;
+  bottom: -50%;
+  padding: 40px 20px;
+  background-color: white;
+  width: 100%;
+  transition: 0.5s;
+}
+@media(max-width:991px) {
+  .portfolio .big-box .box p {
+    padding: 20px 15px;
+  }
+}
+.portfolio .big-box .box:hover p {
+  bottom: -6%;
+}
+.portfolio .big-box .box p span {
+  color: var(--main-color);
+}
+.portfolio .button {
+  text-align: center;
+  margin-top: 40px;
+  border: none;
+}
+.portfolio .button button {
+  background-color: var(--main-color);
+  border: none;
+  padding: 15px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.portfolio .button button:hover {
+  background-color: var(--secondary-color);
+}
+.portfolio .button button a {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+/* End portfolio */

@@ -108,3 +108,13 @@ function updateBullets() {
     }
   });
 }
+// looping to add class active on Elements
+let elements = document.querySelectorAll(".portfolio .text p");
+elements.forEach((element) => {
+  element.addEventListener("click", () => {
+    // Remove 'active' class from all elements
+    elements.forEach((e) => e.classList.remove("active"));
+    // Add 'active' class only to the clicked element
+    element.classList.add("active");
+  });
+});
