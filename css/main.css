@@ -304,6 +304,11 @@ div.arrow-second i {
   padding-right: 20px;
   max-width: 100%;
 }
+@media (max-width: 991px) {
+  .services .container .box .icon {
+    padding-right: 0;
+  }
+}
 .services .container .box .text h4 {
   color: var(--main-color);
   margin-bottom: 40px;
