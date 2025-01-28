@@ -38,9 +38,9 @@ window.addEventListener("resize", () => {
   }
 });
 const backgrounds = [
-  "../project-image/landing.jpg",
-  "../project-image/design-features.jpg",
-  "../project-image/subscribe.jpg",
+  "./project-image/landing.jpg",
+  "./project-image/design-features.jpg",
+  "./project-image/subscribe.jpg",
 ];
 const bullets = document.querySelectorAll(".bullets span");
 
