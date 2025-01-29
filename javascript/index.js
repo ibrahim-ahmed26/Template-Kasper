@@ -118,3 +118,47 @@ elements.forEach((element) => {
     element.classList.add("active");
   });
 });
+// Modified code for multiple elements
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetNumber = parseInt(entry.target.dataset.target); // Get target from data attribute
+        startCounter(entry.target, targetNumber); // Pass the specific element and its target
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+// Modified animation function to work with specific elements
+function animateValue(element, target, duration) {
+  const start = 0;
+  const startTimestamp = performance.now();
+
+  const step = (currentTime) => {
+    const progress = Math.min((currentTime - startTimestamp) / duration, 1);
+    const easeOutQuad = 1 - Math.pow(1 - progress, 2);
+    const current = Math.floor(easeOutQuad * (target - start) + start);
+    
+    element.textContent = current.toLocaleString();
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  };
+
+  requestAnimationFrame(step);
+}
+
+function startCounter(element, targetNumber) {
+  animateValue(element, targetNumber, 2000);
+}
+
+// Observe all counter elements
+document.querySelectorAll('.counter').forEach(counter => {
+  observer.observe(counter);
+});
