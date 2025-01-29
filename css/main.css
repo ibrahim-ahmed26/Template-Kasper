@@ -518,6 +518,27 @@ div.arrow-second i {
 
 }
 /* End Video */
+/* Start About Section */
+.about {
+  position: relative;
+  overflow: hidden;
+}
+.about .image {
+  position: relative;
+  padding-top: 10px;
+  margin-left: -10px;
+  bottom: 0;
+}
+@media (max-width:991px) {
+  .about .image {
+    display: none;
+  }
+}
+.about .image img {
+  position: relative;
+  top: 160px;
+}
+/* End About Section */
 /* Start Animation */
 @keyframes pop-up {
   0% {
