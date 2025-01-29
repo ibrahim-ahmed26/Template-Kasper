@@ -393,7 +393,7 @@ div.arrow-second i {
 }
 .portfolio .big-box {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
 }
 @media(max-width:991px) {
   .portfolio .big-box {
