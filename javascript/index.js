@@ -143,7 +143,7 @@ function animateValue(element, target, duration) {
     const progress = Math.min((currentTime - startTimestamp) / duration, 1);
     const easeOutQuad = 1 - Math.pow(1 - progress, 2);
     const current = Math.floor(easeOutQuad * (target - start) + start);
-    
+
     element.textContent = current.toLocaleString();
 
     if (progress < 1) {
@@ -159,6 +159,37 @@ function startCounter(element, targetNumber) {
 }
 
 // Observe all counter elements
-document.querySelectorAll('.counter').forEach(counter => {
+document.querySelectorAll(".counter").forEach((counter) => {
   observer.observe(counter);
 });
+// Valdition To Email
+let subscribeButton = document.querySelector("input[type ='submit']");
+let form = document.querySelector("form");
+let input = document.querySelector("input[type='text']");
+let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let popUp = document.getElementById("popupContainer");
+let mybutton = document.getElementById("close");
+form.onsubmit = function (e) {
+  if (input.value === "") {
+    e.preventDefault();
+  } else {
+    if (emailPattern.test(input.value)) {
+      alert("Email Subscribed");
+    } else {
+      popUp.style.display = "block";
+      popUp.style.opacity = "1";
+      document.body.classList.add("overlay-two");
+      closePopUp();
+    }
+  }
+};
+function closePopUp() {
+  mybutton.addEventListener("click", function () {
+    popUp.style.display = "none";
+    document.body.classList.remove("overlay-two");
+    input.scrollIntoView({ behavior: "smooth" });
+  });
+}
+let myDate = new Date().getFullYear();
+let mySpan = document.querySelector("span#date");
+mySpan.innerHTML = myDate;
